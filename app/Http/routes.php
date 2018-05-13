@@ -30,4 +30,6 @@
 // 	return route('parent.child');
 // })->name('uu');
 
-Route::get('/posts/{id}', 'PostsController@index');
+// Route::get('/posts/{id}', 'PostsController@index');
+
+Route::resource('/posts', 'PostsController');
