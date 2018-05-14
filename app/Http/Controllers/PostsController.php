@@ -48,7 +48,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {   
-        return '<h1>Show posts # '.$id.'</h1><br><br>Welcome to show page.';
+        return '<h1>Show posts # '.$id.'</h1><br><br>Welcome to show page.<br> siiiiiiiiiiiiiiiiiii';
     }
 
     /**
