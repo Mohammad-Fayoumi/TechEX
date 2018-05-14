@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // // The parameters will be pass to cluser function in order not by name
 // Route::get('/posts/{id}/{name}', function ($ids, $name) {
