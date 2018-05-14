@@ -16,7 +16,7 @@ class PostsController extends Controller
     public function index()
     {
         //
-        return 'Post # ';
+        return '<b>Posts Index Page is here.<b> ';
     }
 
     /**
