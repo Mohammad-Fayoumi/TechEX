@@ -47,8 +47,8 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        return 'Show posts function is here '.$id;
+    {   
+        return '<h1>Show posts # '.$id.'</h1><br><br>Welcome to show page.';
     }
 
     /**
