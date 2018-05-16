@@ -86,8 +86,9 @@ class PostsController extends Controller
     }
 
     public function contact($value='')
-    {
-        return view('contact');
+    {   
+        $peoples = ['mohd'. 'ali', 'salli', 'CR7'];
+        return view('contact', compact('peoples'));
     }
 
     public function show_post($id, $name, $email)
