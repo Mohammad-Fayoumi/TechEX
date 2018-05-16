@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Laraver</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="container">
-	
-	<h1>Post {{$id}} <br/> {{$name}} <br/> {{$email}}</h1>
+@extends('layouts.app')
 
-</div>
-</body>
-</html>
+@section('title')
+	Post
+@stop
+
+@section('content')
+	<h1>ID:  {{$id}}</h1>
+	<h1>Name: {{$name}}</h1>
+	<h1>E-mail: {{$email}}</h1>
+@stop
+

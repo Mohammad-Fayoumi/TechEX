@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Laraver</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="container">
-	
-	<h1>Contact Page</h1>
+@extends('layouts.app')
 
-</div>
-</body>
-</html>
+@section('title')
+	Contact
+@stop
+
+@section('content')
+	<h1>Contact Page</h1>
+	@if(count($peoples) > 0)
+		<ul>
+			@foreach($peoples as $person)
+			<li>{{$person}}</li>
+                @e
+			@endforeach
+		</ul>
+	@endif
+@stop
+
+@section('JS')
+	<!-- <script type="text/javascript">alert('Welcome to contact page')</script> -->
+@stop

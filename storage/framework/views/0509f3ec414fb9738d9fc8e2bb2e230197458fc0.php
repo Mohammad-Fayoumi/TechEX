@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Laraver</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="container">
-	
-	<h1>Post <?php echo e($id); ?> <br/> <?php echo e($name); ?> <br/> <?php echo e($email); ?></h1>
+<?php $__env->startSection('title'); ?>
+	Post
+<?php $__env->stopSection(); ?>
 
-</div>
-</body>
-</html>
+<?php $__env->startSection('content'); ?>
+	<h1>ID:  <?php echo e($id); ?></h1>
+	<h1>Name: <?php echo e($name); ?></h1>
+	<h1>E-mail: <?php echo e($email); ?></h1>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
