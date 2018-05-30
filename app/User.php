@@ -23,4 +23,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+//  one ot one relationship
+    public function post(){
+
+//        this will automatically go to the post table ans expects to use the user_id by default
+        return $this->hasOne('App\Post');
+
+//        but if we have a different foreign column name we should specify that hasOne('App\Post', 'the_user_ID')
+//        and you can add third parameter if the post table has different primary key hasOne('App\Post', 'the_user_ID', 'post_id)
+
+    }
+
+//    one to many relationship
+    public function posts(){
+
+        return $this->hasMany('App\Post');
+
+    }
 }
