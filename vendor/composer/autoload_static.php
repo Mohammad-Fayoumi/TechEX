@@ -260,6 +260,7 @@ class ComposerStaticInit7c3cccb82f77cefe9d7f49edacece1aa
     );
 
     public static $classMap = array (
+        'AddDeletedAtColumnToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2018_05_29_230300_add_deleted_at_column_to_posts_table.php',
         'AddIsAdminColumnToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2018_05_19_154459_add_is_admin_column_to_posts_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2018_05_19_152231_create_posts_table.php',
