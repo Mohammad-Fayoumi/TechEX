@@ -143,7 +143,7 @@ Route::get('/findWhere', function (){
 Route::get('/findMore', function (){
 
 //    $posts = Post::findOrFail(55);
-    $posts = Post::where('id', '>', 1)->firstOrFail()->get();
+    $posts = Post::where('id', '>=', 1)->firstOrFail()->get();
 //    $posts = Post::withTrashed()->where('id', '>', 1)->get();
 //    $posts = Post::onlyTrashed()->where('id', '>', 1)->get();
 //    $posts = Post::where('id', 4)->restore();
@@ -226,7 +226,7 @@ Route::get('/delete2', function (){
 //visit ---> (https://laravel.com/docs/5.6/eloquent#deleting-models).
 Route::get('/softDelete', function (){
 // soft Deleting
-    return Post::where('id', 9)->delete();
+    return Post::where('id', 50)->delete();
 
 //    permanently deleting a model use the non-static method forceDeleting method
 //    $posts = Post::where('id', 4);
@@ -254,13 +254,62 @@ Route::get('/restore', function (){
 
 Route::get('/forceDelete', function (){
 
-//    return Post::where('id', 47)->forceDelete();
+    return Post::withTrashed()->where('id', 50)->forceDelete();
 
 //    Delete all trashed items
-    Post::onlyTrashed()->forceDelete();
+//    Post::onlyTrashed()->forceDelete();
 });
 
 
+use App\User;
+/*
+|--------------------------------------------------------------------------
+| ELOQUENT Relationships
+|--------------------------------------------------------------------------
+|*/
+
+//One to One relationship
+
+Route::get('/user/{id}/posts', function ($id){
+
+    $user_posts = User::find($id)->post;
+
+    echo $user_posts;
+
+//    we can not retrieve all user's posts using one-to-one relationship only with one-to-many
+//    foreach ($user_posts as $post)
+//    {
+//        echo $post;
+//    }
+
+//    update user's post
+//    $user_posts = User::find($id)->post;
+//    $user_posts->title = 'PHP Relationships updated';
+//    $user_posts->save();
+
+});
+
+//To find whom user has this post
+//The inverse relationship
+Route::get('/post/{id}/user', function ($id){
+
+    return Post::find($id)->user;
+
+});
+
+//  ONE-TO-MANY RELATIONSHIP
+Route::get('/posts', function (){
+
+    $user = User::find(1);
+    $user_posts = array();
+
+    foreach($user->posts as $post){
+        array_push($user_posts, $user->name, $post);
+//        echo $post->title.'<br>';
+    }
+    return json_encode($user_posts);
+
+});
 
 
 
