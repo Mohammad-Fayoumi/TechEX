@@ -10,6 +10,8 @@ return array(
     'AddIsAdminColumnToPostsTable' => $baseDir . '/database/migrations/2018_05_19_154459_add_is_admin_column_to_posts_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2018_05_19_152231_create_posts_table.php',
+    'CreateRoleUserPivotTable' => $baseDir . '/database/migrations/2018_06_01_220744_create_role_user_pivot_table.php',
+    'CreateRolesTable' => $baseDir . '/database/migrations/2018_06_01_220010_create_roles_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
