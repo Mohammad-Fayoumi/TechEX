@@ -311,6 +311,30 @@ Route::get('/posts', function (){
 
 });
 
+use App\Role;
 
+//MANY TO MANY RELATIONSHIP
+Route::get('/user/{id}/role', function ($id){
 
+    $user = User::find($id);
 
+    foreach ($user->roles as $role){
+
+        echo $role;
+
+    }
+
+});
+
+Route::get('/role/{id}/user', function ($id){
+
+    $role = Role::find($id);
+
+    echo '<table>
+            <tr><th>User ID</th> <th>User Name</th> <th>Email</th> <th>Role</th></tr>';
+    foreach ($role->users as $user){
+        echo '<tr><td>'.$user->id.'</td><td>'.$user->name.'</td><td>'.$user->email.'</td><td>'.$user->name.'</td></tr>';
+    }
+    echo '</table>';
+
+});
